@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habibullah Hatchery Hub</title>
+<meta name="description" content="Buy healthy day-old chicks and poultry products from Habibullah Hatchery Hub, Azare, Bauchi State, Nigeria.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8f1;color:#243126}
+header{background:#164b2b;color:white;padding:24px 16px;text-align:center}
+header h1{margin:0 0 10px;font-size:27px}
+header p{margin:6px}
+nav{background:#103a22;padding:12px;text-align:center;position:sticky;top:0;z-index:5}
+nav a{color:white;text-decoration:none;margin:0 9px;font-weight:bold;font-size:14px}
+.hero{padding:35px 18px;text-align:center;background:#e2f0d9}
+.hero h2{font-size:29px;margin:0 0 12px;color:#164b2b}
+.btn{display:inline-block;border:0;border-radius:8px;padding:12px 18px;background:#20783e;color:white;text-decoration:none;font-weight:bold;cursor:pointer}
+section{padding:28px 16px;max-width:1100px;margin:auto}
+section h2{text-align:center;color:#164b2b}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border-radius:13px;overflow:hidden;box-shadow:0 3px 12px #00000012;padding-bottom:16px}
+.card img{width:100%;height:190px;object-fit:cover;background:#e6eadf}
+.card h3,.card p{margin:12px 14px}
+.price{font-size:20px;font-weight:bold;color:#20783e}
+.card button{margin:0 14px;width:calc(100% - 28px)}
+.panel{background:white;padding:20px;border-radius:12px;margin:14px 0;line-height:1.8}
+input,select{padding:12px;width:100%;margin:7px 0 14px;border:1px solid #ccd5c8;border-radius:7px;font-size:16px}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #ddd}
+footer{background:#103a22;color:white;text-align:center;padding:24px 15px;line-height:1.8}
+footer a{color:#d9f2b5}
+.small{font-size:13px;color:#626c61}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🐣 Habibullah Hatchery Hub</h1>
+<p>Healthy Chicks • Quality Poultry • Trusted Farm Solutions</p>
+<p>📍 State Low Cost, Behind Alwahda Table Water, Azare, Bauchi State</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#payment">Payment</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+<h2>Welcome to Our Hatchery!</h2>
+<p>Your trusted source for day-old chicks and poultry products.</p>
+<p>Choose your products, add them to your cart and order directly through WhatsApp.</p>
+<a class="btn" href="#products">Shop Products</a>
+</div>
+
+<section id="products">
+<h2>Our Products</h2>
+<p style="text-align:center">Prices are shown per chick. Enter the quantity you need when ordering.</p>
+<div class="products">
+
+<div class="card">
+<img src="images/local-chicks.jpg" alt="Local day-old chicks" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2f0d9/164b2b?text=Local+Day-Old+Chicks'">
+<h3>Local Day-Old Chicks (Kazar Gida)</h3>
+<p class="price">₦500 per chick</p>
+<button class="btn" onclick="addToCart(0)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/guinea-fowl.jpg" alt="Local guinea fowl keets" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2f0d9/164b2b?text=Guinea+Fowl'">
+<h3>Local Guinea Fowl (Zabuwan Gida)</h3>
+<p class="price">₦800 per chick</p>
+<button class="btn" onclick="addToCart(1)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/noiler-chicks.jpg" alt="Noiler day-old chicks" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2f0d9/164b2b?text=Noiler+Chicks'">
+<h3>Noiler Day-Old Chicks</h3>
+<p class="price">₦1,300 per chick</p>
+<button class="btn" onclick="addToCart(2)">Add to Cart</button>
+</div>
+
+</div>
+<p class="small">To display your own pictures, upload them into an images folder in your GitHub repository using the filenames shown in the image paths.</p>
+</section>
+
+<section id="cart">
+<h2>🛒 Your Shopping Cart</h2>
+<div class="panel">
+<div id="cartItems">Your cart is empty.</div>
+<h3>Total: <span id="total">₦0</span></h3>
+<label for="customerName">Your name</label>
+<input id="customerName" placeholder="Enter your name">
+<label for="customerPhone">Your phone number</label>
+<input id="customerPhone" type="tel" placeholder="Enter your phone number">
+<label for="delivery">Delivery or collection</label>
+<select id="delivery">
+<option>Collect from hatchery</option>
+<option>Request delivery (cost to be confirmed)</option>
+</select>
+<label for="customerAddress">Delivery address (if needed)</label>
+<input id="customerAddress" placeholder="Town or delivery address">
+<button class="btn" onclick="orderWhatsApp()">Order on WhatsApp</button>
+</div>
+</section>
+
+<section id="payment">
+<h2>🏦 Bank Payment Details</h2>
+<div class="panel">
+<p><strong>Bank:</strong> Lotus Bank</p>
+<p><strong>Account Name:</strong> Habibullah Hatchery Hub</p>
+<p><strong>Account Number:</strong> 1014723732</p>
+<p>Confirm your order and total with us on WhatsApp before making payment. Keep your payment receipt.</p>
+<button class="btn" onclick="copyAccount()">Copy Account Number</button>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="panel">
+<p><strong>Business:</strong> Habibullah Hatchery Hub</p>
+<p><strong>WhatsApp:</strong> 08035990419</p>
+<p><strong>Email:</strong> habibullahnuhu@gmail.com</p>
+<p><strong>Location:</strong> Azare, Bauchi State, Nigeria</p>
+<a class="btn" href="https://wa.me/2348035990419?text=Hello%20Habibullah%20Hatchery%20Hub%2C%20I%20want%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat With Us</a>
+</div>
+</section>
+
+<footer>
+<strong>Habibullah Hatchery Hub 🐣</strong>
+<p>Quality Day-Old Chicks • Healthy Birds • Trusted Farm Solutions</p>
+<p>Azare, Bauchi State, Nigeria</p>
+<p>© 2026 Habibullah Hatchery Hub</p>
+</footer>
+
+<script>
+const products=[
+{name:"Local Day-Old Chicks (Kazar Gida)",price:500},
+{name:"Local Guinea Fowl (Zabuwan Gida)",price:800},
+{name:"Noiler Day-Old Chicks",price:1300}
+];
+let cart=[];
+
+function money(n){
+return "₦"+n.toLocaleString("en-NG");
+}
+
+function addToCart(index){
+const item=cart.find(x=>x.index===index);
+if(item){item.qty++;}
+else{cart.push({index:index,qty:1});}
+renderCart();
+document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
+
+function changeQty(index,amount){
+const item=cart.find(x=>x.index===index);
+if(!item)return;
+item.qty+=amount;
+cart=cart.filter(x=>x.qty>0);
+renderCart();
+}
+
+function renderCart(){
+const box=document.getElementById("cartItems");
+if(cart.length===0){
+box.textContent="Your cart is empty.";
+}else{
+box.innerHTML=cart.map(item=>
+'<div class="cart-item"><div><strong>'+products[item.index].name+
+'</strong><br>'+money(products[item.index].price)+' each<br>Quantity: '+
+'<button onclick="changeQty('+item.index+',-1)">−</button> '+
+item.qty+' <button onclick="changeQty('+item.index+',1)">+</button></div>'+
+'<strong>'+money(products[item.index].price*item.qty)+'</strong></div>'
+).join("");
+}
+document.getElementById("total").textContent=money(
+cart.reduce((sum,item)=>sum+products[item.index].price*item.qty,0)
+);
+}
+
+function orderWhatsApp(){
+if(cart.length===0){
+alert("Please add at least one product to your cart.");
+return;
+}
+const name=document.getElementById("customerName").value.trim();
+const phone=document.getElementById("customerPhone").value.trim();
+const delivery=document.getElementById("delivery").value;
+const address=document.getElementById("customerAddress").value.trim();
+if(!name||!phone){
+alert("Please enter your name and phone number.");
+return;
+}
+let message="Hello Habibullah Hatchery Hub! I want to place an order.%0A";
+message+="Name: "+encodeURIComponent(name)+"%0A";
+message+="Phone: "+encodeURIComponent(phone)+"%0A";
+message+="Order:%0A";
+cart.forEach(item=>{
+message+=encodeURIComponent(products[item.index].name+
+" x "+item.qty+" = "+money(products[item.index].price*item.qty))+"%0A";
+});
+const total=cart.reduce((sum,item)=>sum+products[item.index].price*item.qty,0);
+message+="Total product cost: "+encodeURIComponent(money(total))+"%0A";
+message+="Collection: "+encodeURIComponent(delivery)+"%0A";
+if(address)message+="Address: "+encodeURIComponent(address)+"%0A";
+message+="Please confirm availability, delivery charges and payment before I pay.";
+window.open("https://wa.me/2348035990419?text="+message,"_blank");
+}
+
+function copyAccount(){
+if(navigator.clipboard&&navigator.clipboard.writeText){
+navigator.clipboard.writeText("1014723732").then(
+()=>alert("Account number copied."),
+()=>alert("Account number: 1014723732")
+);
+}else{
+alert("Lotus Bank account number: 1014723732");
+}
+}
+</script>
+</body>
+</html>
